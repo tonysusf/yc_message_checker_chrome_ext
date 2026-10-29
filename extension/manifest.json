@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YC Message Checker",
+  "version": "1.0.0",
+  "description": "Checks Startup School co-founder messages and alerts you when unread messages arrive.",
+  "action": {
+    "default_title": "YC Message Checker",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "alarms",
+    "notifications",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.startupschool.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icons/icon-128.png"
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YC Message Checker</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <header class="toolbar">
+    <h1>YC Message Checker</h1>
+    <button id="refresh" class="icon-button" aria-label="Refresh messages" title="Refresh messages">↻</button>
+    <button id="settingsToggle" class="icon-button" aria-label="Settings" title="Settings" aria-controls="settingsPanel" aria-expanded="false">⋯</button>
+  </header>
+  <p id="status" role="status" aria-live="polite">Loading…</p>
+  <p id="lastChecked"></p>
+  <section id="messagesPanel" aria-label="Message previews">
+    <div class="preview-header"><h2>Messages</h2>
+      <div class="filters" role="group" aria-label="Filter conversations">
+        <button id="all" aria-pressed="true">All</button>
+        <button id="unread" aria-pressed="false">Unread</button>
+      </div>
+    </div>
+    <p id="cacheNote" class="cache-note"></p>
+    <ul id="previews" aria-label="Conversations"></ul>
+  </section>
+  <section id="settingsPanel" aria-labelledby="settingsTitle" hidden>
+    <div class="preview-header"><h2 id="settingsTitle">Settings</h2>
+      <button id="settingsClose" class="icon-button" aria-label="Close settings">×</button>
+    </div>
+  <label class="toggle"><input id="enabled" type="checkbox"> Check automatically</label>
+  <label for="interval">Check every</label>
+  <select id="interval">
+    <option value="1">1 minute</option>
+    <option value="3">3 minutes</option>
+    <option value="5">5 minutes</option>
+    <option value="10">10 minutes</option>
+  </select>
+    <button id="check">Check now</button>
+    <button id="test" class="secondary">Test notification</button>
+  </section>
+  <a href="https://www.startupschool.org/cofounder-matching/inbox" target="_blank" rel="noopener noreferrer">Open YC inbox ↗</a>
+</body>
+</html>
